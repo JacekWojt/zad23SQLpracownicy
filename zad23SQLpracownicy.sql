@@ -93,7 +93,8 @@ JOIN stanowisko ON pracownik.id = stanowisko.id
 JOIN adres ON pracownik.id = adres.id;
 
 -- 14. Oblicza sumę wypłat dla wszystkich pracowników
-SELECT SUM(salary) AS "Suma wypłat" FROM stanowisko;
+SELECT SUM(salary) 'Suma wypłat pracowników' FROM pracownik
+JOIN stanowisko ON pracownik.stanowisko_id = stanowisko.id;
 
 -- 15. Pobiera pracowników mieszkających w lokalizacji z kodem pocztowym 43010
 SELECT first_name, last_name, postcode FROM pracownik
